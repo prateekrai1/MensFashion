@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "./Navbar/Navbar";
 import { BrowserRouter as Router } from "react-router-dom";
 import ImageSlider from "./Carousel/CarouselMenu";
+import Bottom from "./BottomPart/Bottom";
 
 const slides = [
   {

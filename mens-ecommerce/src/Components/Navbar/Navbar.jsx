@@ -5,7 +5,9 @@ import { FaBars } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { IoMdSearch } from "react-icons/io";
 import { FaShoppingCart } from "react-icons/fa";
-import Avatarmenu from "../LoginAvatar/AvatarMenu";
+import { IoPersonSharp } from "react-icons/io5";
+import { FaHeart } from "react-icons/fa";
+
 //onClick={window.location.pathname = val.link}
 
 const Navbar = () => {
@@ -15,30 +17,38 @@ const Navbar = () => {
   return (
     <>
       <div className="navbar">
-        <Link to="#" className="menu-bars">
-          <FaBars onClick={showSidebar} />
-        </Link>
-        <div className="searchInputs">
-          <div className="searchIcon">
-            <IoMdSearch />
+        <div className="topbar">
+          <Link to="#" className="menu-bars">
+            <FaBars onClick={showSidebar} />
+          </Link>
+          <div className="searchInputs">
+            <div className="searchIcon">
+              <IoMdSearch/>
+            </div>
+            <input
+              type="text"
+              placeholder="Search"
+              size="32"
+              className="textbox"
+            />
           </div>
-          <input
-            type="text"
-            placeholder="Search"
-            size="32"
-            className="textbox"
-          />
+
+          <div className="rightpart">
+            <div className="heart-icon-container">
+              <FaHeart className="heart-icon"/>
+              <h3 className="wishlist-heading">Wishlist</h3>
+            </div>
+            <div className="cart-icon-container">
+              <FaShoppingCart className="cart-icon"/>
+              <h3 className="cart-heading">Cart</h3>
+            </div>
+            <div className="avatar-icon-container">
+              <IoPersonSharp className="avatar-icon"/>
+              <h3 className="avatar-heading">Sign-in</h3>
+            </div>
+          </div>
         </div>
-        <div className="cart-icon">
-          <FaShoppingCart />
-        </div>
-    <div>
-        
-          <Avatarmenu />
-    </div>
       </div>
-
-
       <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
         <ul className="nav-menu-items" onClick={showSidebar}>
           <li className="navbar-toggle">

@@ -27,10 +27,12 @@ body {
 }
 
 .menu-bars {
+  margin-top: 0.7rem;
   margin-left: 2rem;
   font-size: 1.5rem;
   color:#e3e2df ;
   background: none;
+  transition: 0.5s ease-in;
 }
 
 .nav-menu {
@@ -117,20 +119,137 @@ span{
 .rightpart{
   display: flex;
   flex-direction: row;
-  gap: 25px;
+  gap: 18px;
 }
 
 .cart-icon{
-  font-size: 1.8rem;
+  font-size: 2rem;
   color: #e3e2df;
-  padding: 5px;
+  padding-top: 5px;
+}
+.heart-icon{
+  font-size: 1.5rem;
+  padding-left: 10px;
+  padding-bottom: 5px;
+  color: #e3e2df;
+}
+
+.heart-icon-container{
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+}
+
+.wishlist-heading{
+ font-size: 12px;
+ padding: 0;
+ margin: 0;
+ color: #e3e2df;
+}
+
+.cart-icon-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 2px;
+}
+
+.cart-heading{
+ font-size: 12px;
+ padding: 0;
+ margin: 0;
+ color: #e3e2df;
+ padding-bottom: 3px;
+ padding-left: 3.2px;
+}
+
+.cart-icon{
+font-size: 1.6rem;
+padding-bottom: 5px;
+}
+
+.avatar-icon-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 5px;
+}
+
+.avatar-icon{
+  font-size: 1.6rem;
+  color: #e3e2df;
+  background-color: none;
+  padding-bottom: 5px;
+  padding-left: 5px;
+}
+
+.avatar-heading{
+font-size: 12px;
+ padding: 0;
+ margin: 0;
+ color: #e3e2df;
+ padding-bottom: 3px;
 }
 
 .cart-icon:hover{
   cursor: pointer;
-  transition: 0.15s ease-in;
+}
+
+.avatar-icon:hover{
+  cursor: pointer;
+}
+
+.heart-icon:hover{
+  cursor: pointer;
 }
 
 .car-menu{
   text-align: center;
+}
+
+.topbar{
+  display: flex;
+  justify-content: space-between;
+  gap: 40rem ;
+}
+
+.carousel-desc-heading{
+  position: absolute;
+  color: black;
+  bottom: 0.1;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  text-align: center;
+}
+
+.car-desc-container{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.carousel-desc{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: black;
+  padding: 10px;
+  text-align: center;
+}
+
+.shop-now-car-button{
+  position: relative;
+    margin: 10px;
+    padding: 5px 10px;
+    font-size: 14px;
+    color: white;
+    bottom: 0.1;
+    left: 0;
+    right: 0;
+    top:0.1;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
 }

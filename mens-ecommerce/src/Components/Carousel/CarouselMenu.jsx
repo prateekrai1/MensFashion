@@ -1,42 +1,107 @@
-import React from 'react'
-import Carousel from 'react-bootstrap/Carousel';
-import { useState } from 'react';
+import { Button } from "@mui/material";
+import { useState } from "react";
 
-const CarouselMenu = () => {
+const slideStyles = {
+  width: "100%",
+  height: "130%",
+  backgroundSize: "cover",
+  backgroundPosition: "center",
+};
 
-    const [index, setIndex] = useState(0);
+const rightArrowStyles = {
+  position: "absolute",
+  top: "50%",
+  transform: "translate(0, -50%)",
+  right: "32px",
+  fontSize: "45px",
+  color: "#fff",
+  zIndex: 1,
+  cursor: "pointer",
+};
 
-  const handleSelect = (selectedIndex) => {
-    setIndex(selectedIndex);
+const leftArrowStyles = {
+  position: "absolute",
+  top: "50%",
+  transform: "translate(0, -50%)",
+  TransitionEvent: "0.5s ease-in",
+  left: "32px",
+  fontSize: "45px",
+  color: "#fff",
+  zIndex: 1,
+  cursor: "pointer",
+};
+
+const sliderStyles = {
+  position: "relative",
+  height: "100%",
+};
+
+const dotsContainerStyles = {
+  display: "flex",
+  justifyContent: "center",
+};
+
+const dotStyle = {
+  margin: "0 3px",
+  cursor: "pointer",
+  fontSize: "20px",
+};
+
+const ImageSlider = ({ slides }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const goToPrevious = () => {
+    const isFirstSlide = currentIndex === 0;
+    const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
+    setCurrentIndex(newIndex);
+  };
+  const goToNext = () => {
+    const isLastSlide = currentIndex === slides.length - 1;
+    const newIndex = isLastSlide ? 0 : currentIndex + 1;
+    setCurrentIndex(newIndex);
+  };
+  const goToSlide = (slideIndex) => {
+    setCurrentIndex(slideIndex);
+  };
+  const slideStylesWidthBackground = {
+    ...slideStyles,
+    backgroundImage: `url(${slides[currentIndex].url})`,
+    transition: "0.3s ease-in-out",
   };
 
   return (
-    <Carousel activeIndex={index} onSelect={handleSelect}>
-    <Carousel.Item>
-      {/* <ExampleCarouselImage text="First slide" /> */}
-      <Carousel.Caption>
-        <h3>First slide label</h3>
-        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-      </Carousel.Caption>
-    </Carousel.Item>
-    <Carousel.Item>
-      {/* <ExampleCarouselImage text="Second slide" /> */}
-      <Carousel.Caption>
-        <h3>Second slide label</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      </Carousel.Caption>
-    </Carousel.Item>
-    <Carousel.Item>
-      {/* <ExampleCarouselImage text="Third slide" /> */}
-      <Carousel.Caption>
-        <h3>Third slide label</h3>
-        <p>
-          Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-        </p>
-      </Carousel.Caption>
-    </Carousel.Item>
-  </Carousel>
-  )
-}
+    <div style={sliderStyles}>
+      <div>
+        <div onClick={goToPrevious} style={leftArrowStyles}>
+          ❰
+        </div>
+        <div onClick={goToNext} style={rightArrowStyles}>
+          ❱
+        </div>
+      </div>
+      <div style={slideStylesWidthBackground}>
+        <h1 className="carousel-desc-heading">New Arrivals</h1>
+        {/* <h3 className="carousel-desc-heading">Sleek brown Mens choice premium</h3> */}
+        <div className="car-desc-container">
+          <p className="carousel-desc">
+            {" "}
+            Get your hands on the exclusive T-shirts
+          </p>
+          {/* <button className="shop-now-car-button">Shop Now</button> */}
+        </div>
+      </div>
+      <div style={dotsContainerStyles}>
+        {slides.map((slide, slideIndex) => (
+          <div
+            style={dotStyle}
+            key={slideIndex}
+            onClick={() => goToSlide(slideIndex)}
+          >
+            ●
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
 
-export default CarouselMenu
+export default ImageSlider;

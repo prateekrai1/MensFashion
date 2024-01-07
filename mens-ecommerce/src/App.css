@@ -203,6 +203,10 @@ font-size: 12px;
   cursor: pointer;
 }
 
+.avatar-icon-container :hover{
+  text-decoration: underline solid 2px #66fcf1;
+}
+
 .car-menu{
   text-align: center;
 }

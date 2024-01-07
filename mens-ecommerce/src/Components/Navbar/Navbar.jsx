@@ -44,7 +44,7 @@ const Navbar = () => {
             </div>
             <div className="avatar-icon-container">
               <IoPersonSharp className="avatar-icon"/>
-              <h3 className="avatar-heading">Sign-in</h3>
+              <h3 className="avatar-heading">Profile</h3>
             </div>
           </div>
         </div>

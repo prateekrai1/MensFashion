@@ -10,19 +10,19 @@ import { PiShirtFoldedFill } from "react-icons/pi";
 export const navbarData = [
     {
         title:"Home",
-        icon: <IoMdHome style={{fontSize:'23px'}}/>,
+        icon: <IoMdHome style={{fontSize:'23px', color:"#66fcf1"}}/>,
         link: "/home",
         cname:"nav-text"
     },
     {
         title:"Shirts",
-        icon: <PiShirtFoldedFill style={{fontSize:'23px'}}/>,
+        icon: <PiShirtFoldedFill style={{fontSize:'23px', color:"#66fcf1"}}/>,
         link: "/topwear",
         cname:"nav-text"
     },
     {
         title:"T-Shirts",
-        icon: <GiPoloShirt style={{fontSize:'23px'}}/>,
+        icon: <GiPoloShirt style={{fontSize:'23px', color:"#66fcf1"}}/>,
         link: "/topwear" ,
         cname:"nav-text"
     }

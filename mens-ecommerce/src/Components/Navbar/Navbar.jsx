@@ -7,7 +7,7 @@ import { IoMdSearch } from "react-icons/io";
 import { FaShoppingCart } from "react-icons/fa";
 import { IoPersonSharp } from "react-icons/io5";
 import { FaHeart } from "react-icons/fa";
-
+import { MdOutlineArrowDropDown } from "react-icons/md";
 //onClick={window.location.pathname = val.link}
 
 const Navbar = () => {
@@ -23,7 +23,7 @@ const Navbar = () => {
           </Link>
           <div className="searchInputs">
             <div className="searchIcon">
-              <IoMdSearch/>
+              <IoMdSearch className="search-icon"/>
             </div>
             <input
               type="text"
@@ -44,7 +44,7 @@ const Navbar = () => {
             </div>
             <div className="avatar-icon-container">
               <IoPersonSharp className="avatar-icon"/>
-              <h3 className="avatar-heading">Profile</h3>
+              <h3 className="avatar-heading">Profile<MdOutlineArrowDropDown style={{color:"#66fcf1", fontSize:"12px"}}/></h3>
             </div>
           </div>
         </div>

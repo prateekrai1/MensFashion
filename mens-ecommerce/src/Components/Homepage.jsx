@@ -3,6 +3,8 @@ import Navbar from "./Navbar/Navbar";
 import { BrowserRouter as Router } from "react-router-dom";
 import ImageSlider from "./Carousel/CarouselMenu";
 import Bottom from "./BottomPart/Bottom";
+import ProductCard from "./Products/ProductCard";
+import HomeBanner from "./HomeBanner/HomeBanner";
 
 const slides = [
   {
@@ -38,10 +40,14 @@ const Homepage = () => {
     <div className="home">
       <Router>
         <Navbar />
+        <HomeBanner/>
         <div style={containerStyles}>
           <ImageSlider slides={slides} />
         </div>
-      </Router>
+        <div>
+        
+        </div>
+        </Router>
     </div>
   );
 };

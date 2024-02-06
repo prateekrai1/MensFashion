@@ -340,3 +340,8 @@ font-size: 12px;
   padding-right: 2px;
 }
 
+.productImage:hover{
+  height: 520px;
+  width: 370px;
+  transition: 0.4s ease-in-out;
+}
